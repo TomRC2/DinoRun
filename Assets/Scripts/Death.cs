@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Death : MonoBehaviour
+public class Killzone : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject Retry;
+    public void Retry1()
     {
-        
+        SceneManager.LoadScene("DinoScene");
+        Time.timeScale = 1.0f;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

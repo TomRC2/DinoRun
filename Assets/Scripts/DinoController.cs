@@ -1,33 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class DinoController : MonoBehaviour
 {
-        public float jumpForce = 5f;
-        private Rigidbody2D rb;
-        private bool CanJump = true;
+    public float jumpForce = 5f;
+    private Rigidbody2D rb;
+    private bool CanJump = true;
+    public GameObject Retry;
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
-        void Start()
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && CanJump)
         {
-            rb = GetComponent<Rigidbody2D>();
+            rb.velocity = Vector2.up * jumpForce;
+            CanJump = false;
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            CanJump = true;
         }
 
-        void Update()
+        if (collision.gameObject.CompareTag("Spike"))
         {
-            if (Input.GetKeyDown(KeyCode.Space) && CanJump)
-            {
-                rb.velocity = Vector2.up * jumpForce;
-                CanJump = false;
-            }
+            Time.timeScale = 0f;
+            Retry.SetActive(true);
         }
+    }
 
-        void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.gameObject.CompareTag("Ground"))
-            {
-                CanJump = true;
-            }
-        }
-    
 }

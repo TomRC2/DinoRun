@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class RandomSpawn : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject[] Obstacles;
+    public Vector2 position;
+    public float timetospawn;
+    public float repeat;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        InvokeRepeating("SpawnObstacles", timetospawn, repeat);
+    }
+    void SpawnObstacles()
+    {
+        int randoms = Random.Range(0, Obstacles.Length);
+        GameObject RandomObstacles = Obstacles[randoms];
+        Instantiate(RandomObstacles, position, RandomObstacles.transform.rotation);
     }
 }

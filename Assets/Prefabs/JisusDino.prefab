@@ -13,8 +13,7 @@ GameObject:
   - component: {fileID: 3145730052796919813}
   - component: {fileID: 7957328613644186382}
   - component: {fileID: 8495458595158315829}
-  - component: {fileID: 5107763269415401520}
-  - component: {fileID: 8935479362147921261}
+  - component: {fileID: 721483589378897778}
   m_Layer: 0
   m_Name: JisusDino
   m_TagString: Untagged
@@ -139,7 +138,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2.5
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -165,23 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 10
   Retry: {fileID: 0}
---- !u!114 &5107763269415401520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2975221860866828897}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 268787e56ec95ad40ba9564f0748c2e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObstaclePrefab: {fileID: 5974115255324225168, guid: 1ec9b820f20c6bd4c9fe9b0042e6f6bd, type: 3}
-  spawnPos: {x: 10, y: -4}
-  delay: 2
-  repeatRate: 2
---- !u!114 &8935479362147921261
+--- !u!114 &721483589378897778
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -194,8 +177,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obstacles:
-  - {fileID: 5974115255324225168, guid: 1ec9b820f20c6bd4c9fe9b0042e6f6bd, type: 3}
+  - {fileID: 7180101334301925815, guid: 5b67ca6a2b924784a89f368b909081ff, type: 3}
   - {fileID: 7180101334301925815, guid: 752c0ab8be48c5e4baf0bf1c2a76e3b2, type: 3}
-  position: {x: 10, y: -4}
+  - {fileID: 7180101334301925815, guid: a7f817f0c3697bd4cbebf10816a773e6, type: 3}
+  - {fileID: 5974115255324225168, guid: 1ec9b820f20c6bd4c9fe9b0042e6f6bd, type: 3}
+  position: {x: 4, y: 3}
   timetospawn: 2
   repeat: 2
